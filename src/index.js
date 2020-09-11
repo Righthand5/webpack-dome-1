@@ -1,1 +1,2 @@
-console.log('hinp')
+import x from './x.js'
+console.log(x)

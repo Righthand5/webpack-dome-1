@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"rm -rf dist && webpack",
+    "build": "rm -rf dist && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.4.1"
   }
 }
