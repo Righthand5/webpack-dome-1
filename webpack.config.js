@@ -9,6 +9,7 @@ module.exports = {
   mode: 'development',
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],//开发的时候留下它，因为它的速度非常的快!
