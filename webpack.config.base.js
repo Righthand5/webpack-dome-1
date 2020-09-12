@@ -18,7 +18,29 @@ module.exports = {
   })
   ],
   module: {
-    rules: [
+    rules: [{
+      test:/\.(png|svg|jpg|gif)$/,
+      use: ["file-loader"]
+    },{
+        test: /\.less$/,
+        use: [{
+            loader: "style-loader" // creates style nodes from JS strings
+        }, {
+            loader: "css-loader" // translates CSS into CommonJS
+        }, {
+            loader: "less-loader" // compiles Less to CSS
+        }]
+    },
+      {
+          test: /\.styl$/,
+          use: [{
+              loader: "style-loader" // creates style nodes from JS strings
+          }, {
+              loader: "css-loader" // translates CSS into CommonJS
+          }, {
+              loader: "stylus-loader" // compiles Less to CSS
+    }]
+  },
       {
         test: /\.s[ac]ss$/i,
         use: [
