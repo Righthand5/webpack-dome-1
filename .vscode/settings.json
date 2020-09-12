@@ -16,5 +16,9 @@
             "command": "extension.execute",
             "priority": 4
         }
-    ]
+    ],
+    "workbench.colorTheme": "Material Theme High Contrast",
+    "editor.fontSize": 20,
+    "debug.console.fontSize": 16,
+    "markdown.preview.fontSize": 16
 }

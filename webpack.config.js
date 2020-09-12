@@ -2,44 +2,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+const base = require('./webpack.config.base.js')
+
 module.exports = {
+  ...base,//把base的所有属性抄到这里
   mode: 'development',
-  entry:'./src/index.js',
-  output:{
-      filename:'[name].[contenthash].js'
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-     contentBase: './dist',
-   },
-  plugins: [
-    new HtmlWebpackPlugin({
-    title:'Xyx',
-    template: 'src/assets/index.html'
-  }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css',
-      ignoreOrder: false,
-    }),
-  ],
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it uses publicPath in webpackOptions.output
-              publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
-          'css-loader',
-        ],
-        // use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader'],//开发的时候留下它，因为它的速度非常的快!
       },
     ],
   },
